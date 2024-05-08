@@ -1,0 +1,18 @@
+import { jwtDecode } from "jwt-decode";
+
+export function getClaims(token) {
+    const claims = jwtDecode(token);
+    return claims;
+}
+
+export function getNameClaim(token) {
+    return getClaims(token).nome;
+}
+
+export function getRolesClaim(token) {
+    return getClaims(token).ruoli;
+}
+
+export function getEmailClaim(token) {
+    return getClaims(token).email;
+}
