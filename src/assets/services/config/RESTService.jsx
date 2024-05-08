@@ -87,13 +87,9 @@ export async function deleteUser(email) {
 }
 
 export async function getAllCourses() {
-    const token = Cookies.get("token");
     const response = await fetch("http://localhost:8080/api/corso/corsi", {
         mode: "cors",
         method: "GET",
-        headers: {
-            Authorization: "Bearer " + token,
-        },
     });
     console.log(response);
     if (!response.ok) {
@@ -101,4 +97,28 @@ export async function getAllCourses() {
     }
     const courses = await response.json();
     return courses;
+}
+
+export async function updateCourse(formData, token) {
+    const jsonBody = JSON.stringify(formData);
+    console.log(jsonBody);
+    console.log(token);
+    const response = await fetch("http://localhost:8080/api/corsi/aggiorna", {
+        mode: "cors",
+        method: "PUT",
+        body: jsonBody,
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+        },
+    });
+
+    console.log(response.status);
+}
+
+export async function deleteCourse(id) {
+    await fetch(`http://127.0.0.1:8080/api/utente/cancella/${id}`, {
+        mode: "cors",
+        method: "DELETE",
+    });
 }

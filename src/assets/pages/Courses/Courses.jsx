@@ -19,7 +19,7 @@ export function Courses() {
             <div className="row">
                 {courses.map((course, index) => (
                     <div key={index} className="col-lg-4 col-md-6 mv-4">
-                        <CourseCard Titolo={course.nomeCorso} Descrizione={course.descrizioneBreve} Durata={course.durata} Categoria={course.idCategoria} />
+                        <CourseCard Id={course.id} Titolo={course.nomeCorso} Descrizione={course.descrizioneBreve} Durata={course.durata} Categoria={course.idCategoria} />
                     </div>
                 ))}
             </div>
