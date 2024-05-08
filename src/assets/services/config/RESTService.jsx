@@ -117,8 +117,21 @@ export async function updateCourse(formData, token) {
 }
 
 export async function deleteCourse(id) {
-    await fetch(`http://127.0.0.1:8080/api/utente/cancella/${id}`, {
+    await fetch(`http://127.0.0.1:8080/api/corsi/cancella/${id}`, {
         mode: "cors",
         method: "DELETE",
     });
+}
+
+export async function insertCourse(formData) {
+    const jsonBody = JSON.stringify(formData);
+    const response = await fetch("http://127.0.0.1:8080/api/corsi/inserisci", {
+        mode: "cors",
+        method: "POST",
+        body: jsonBody,
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    return response.status;
 }
