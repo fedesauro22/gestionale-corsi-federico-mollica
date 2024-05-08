@@ -46,8 +46,8 @@ export function Navbar() {
                             {ruoli == "Admin" ? (
                                 <ul className={`${myStyle.dropdownList} dropdown-menu dropdown-menu-lg-start`} aria-labelledby="dropdownMenuButton1">
                                     <li>
-                                        <NavLink className={`${myStyle.dropdownItem}`} to="/courses/">
-                                            Gestisci Corsi
+                                        <NavLink className={`${myStyle.dropdownItem}`} to="/courses/insert">
+                                            Inserisci Corsi
                                         </NavLink>
                                     </li>
                                     <li>

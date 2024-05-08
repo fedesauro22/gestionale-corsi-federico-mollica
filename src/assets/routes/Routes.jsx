@@ -8,7 +8,7 @@ import { ProtectedRoute } from "../components/ProtectedRoute";
 import { UserRegistration } from "../pages/UserRegistration/UserRegistration";
 import { UserLogin } from "../pages/UserLogin/UserRegistration";
 import { Users } from "../pages/Users/Users";
-
+import { CourseRegistration } from "../pages/CourseRegistration/CourseRegistration";
 const routes = createBrowserRouter([
     {
         element: (
@@ -30,6 +30,14 @@ const routes = createBrowserRouter([
                             {
                                 path: "",
                                 element: <Courses />,
+                            },
+                            {
+                                path: "insert/",
+                                element: (
+                                    <ProtectedRoute>
+                                        <CourseRegistration />,
+                                    </ProtectedRoute>
+                                ),
                             },
                         ],
                     },
