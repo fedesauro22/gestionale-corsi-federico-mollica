@@ -16,3 +16,9 @@ export function getRolesClaim(token) {
 export function getEmailClaim(token) {
     return getClaims(token).email;
 }
+
+
+//funzione per prendere un claim con chiave key
+export function getSpecifiedClaim(token, key){
+    return (getClaims(token))[key];
+}
